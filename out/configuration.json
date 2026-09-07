@@ -1,0 +1,1886 @@
+{
+  "generated_at": "2026-09-07T15:19:57.586763Z",
+  "source_files": {
+    "immobili": "C:\\Users\\Faisal Ramzan\\Desktop\\takehome-ramzan\\data\\immobili.csv",
+    "prenotazioni": "C:\\Users\\Faisal Ramzan\\Desktop\\takehome-ramzan\\data\\prenotazioni.csv",
+    "costi": "C:\\Users\\Faisal Ramzan\\Desktop\\takehome-ramzan\\data\\costi.csv"
+  },
+  "summary": {
+    "total_listings": 40,
+    "configured": 40,
+    "blocking": 3,
+    "unconfigured_ids": [],
+    "by_cluster": {
+      "Nord Sardegna": 11,
+      "Cagliari": 17,
+      "Roma": 8,
+      "Venezia": 4
+    },
+    "by_scheme": {
+      "rent_to_rent": 8,
+      "percentage": 32
+    }
+  },
+  "listings": [
+    {
+      "id": "A001",
+      "nome": "Pianeta Casa — Bilocale Marina 1",
+      "indirizzo": "Via Marina 8 int. 1",
+      "comune": "Olbia",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Pianeta Casa Srl",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [],
+      "scheme": {
+        "type": "rent_to_rent",
+        "percentage": null,
+        "base": null,
+        "extras_included_in_base": false,
+        "monthly_rent": 1200.0,
+        "season_start": "2026-06-01",
+        "season_end": "2026-10-31"
+      },
+      "setup_costs": [
+        {
+          "label": "canone",
+          "shape": "recurring",
+          "amount": 1200.0,
+          "start_date": "2026-06-01",
+          "end_date": "2026-10-31",
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A002",
+      "nome": "Pianeta Casa — Bilocale Marina 2",
+      "indirizzo": "Via Marina 8 int. 2",
+      "comune": "Olbia",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Pianeta Casa Srl",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [],
+      "scheme": {
+        "type": "rent_to_rent",
+        "percentage": null,
+        "base": null,
+        "extras_included_in_base": false,
+        "monthly_rent": 1200.0,
+        "season_start": "2026-06-01",
+        "season_end": "2026-10-31"
+      },
+      "setup_costs": [
+        {
+          "label": "canone",
+          "shape": "recurring",
+          "amount": 1200.0,
+          "start_date": "2026-06-01",
+          "end_date": "2026-10-31",
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A003",
+      "nome": "Pianeta Casa — Bilocale Marina 3",
+      "indirizzo": "Via Marina 8 int. 3",
+      "comune": "Olbia",
+      "camere": 1,
+      "posti_letto": 4,
+      "pms_owner": "Pianeta Casa Srl",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [],
+      "scheme": {
+        "type": "rent_to_rent",
+        "percentage": null,
+        "base": null,
+        "extras_included_in_base": false,
+        "monthly_rent": 1200.0,
+        "season_start": "2026-06-01",
+        "season_end": "2026-10-31"
+      },
+      "setup_costs": [
+        {
+          "label": "canone",
+          "shape": "recurring",
+          "amount": 1200.0,
+          "start_date": "2026-06-01",
+          "end_date": "2026-10-31",
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A004",
+      "nome": "Pianeta Casa — Trilocale Marina 4",
+      "indirizzo": "Via Marina 8 int. 4",
+      "comune": "Olbia",
+      "camere": 2,
+      "posti_letto": 5,
+      "pms_owner": "Pianeta Casa Srl",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [],
+      "scheme": {
+        "type": "rent_to_rent",
+        "percentage": null,
+        "base": null,
+        "extras_included_in_base": false,
+        "monthly_rent": 1200.0,
+        "season_start": "2026-06-01",
+        "season_end": "2026-10-31"
+      },
+      "setup_costs": [
+        {
+          "label": "canone",
+          "shape": "recurring",
+          "amount": 1200.0,
+          "start_date": "2026-06-01",
+          "end_date": "2026-10-31",
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A005",
+      "nome": "Pianeta Casa — Suite Porto 1",
+      "indirizzo": "Via del Porto 22 int. 1",
+      "comune": "Olbia",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Pianeta Casa Srl",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [],
+      "scheme": {
+        "type": "rent_to_rent",
+        "percentage": null,
+        "base": null,
+        "extras_included_in_base": false,
+        "monthly_rent": 1200.0,
+        "season_start": "2026-06-01",
+        "season_end": "2026-10-31"
+      },
+      "setup_costs": [
+        {
+          "label": "canone",
+          "shape": "recurring",
+          "amount": 1200.0,
+          "start_date": "2026-06-01",
+          "end_date": "2026-10-31",
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A006",
+      "nome": "Pianeta Casa — Suite Porto 2",
+      "indirizzo": "Via del Porto 22 int. 2",
+      "comune": "Olbia",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Pianeta Casa Srl",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [],
+      "scheme": {
+        "type": "rent_to_rent",
+        "percentage": null,
+        "base": null,
+        "extras_included_in_base": false,
+        "monthly_rent": 1200.0,
+        "season_start": "2026-06-01",
+        "season_end": "2026-10-31"
+      },
+      "setup_costs": [
+        {
+          "label": "canone",
+          "shape": "recurring",
+          "amount": 1200.0,
+          "start_date": "2026-06-01",
+          "end_date": "2026-10-31",
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A007",
+      "nome": "Pianeta Casa — Suite Porto 3",
+      "indirizzo": "Via del Porto 22 int. 3",
+      "comune": "Olbia",
+      "camere": 1,
+      "posti_letto": 3,
+      "pms_owner": "Pianeta Casa Srl",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [],
+      "scheme": {
+        "type": "rent_to_rent",
+        "percentage": null,
+        "base": null,
+        "extras_included_in_base": false,
+        "monthly_rent": 1200.0,
+        "season_start": "2026-06-01",
+        "season_end": "2026-10-31"
+      },
+      "setup_costs": [
+        {
+          "label": "canone",
+          "shape": "recurring",
+          "amount": 1200.0,
+          "start_date": "2026-06-01",
+          "end_date": "2026-10-31",
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A008",
+      "nome": "Pianeta Casa — Attico Porto",
+      "indirizzo": "Via del Porto 22 int. 4",
+      "comune": "Olbia",
+      "camere": 3,
+      "posti_letto": 6,
+      "pms_owner": "Pianeta Casa Srl",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [],
+      "scheme": {
+        "type": "rent_to_rent",
+        "percentage": null,
+        "base": null,
+        "extras_included_in_base": false,
+        "monthly_rent": 1200.0,
+        "season_start": "2026-06-01",
+        "season_end": "2026-10-31"
+      },
+      "setup_costs": [
+        {
+          "label": "canone",
+          "shape": "recurring",
+          "amount": 1200.0,
+          "start_date": "2026-06-01",
+          "end_date": "2026-10-31",
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A009",
+      "nome": "Via Sulis 14 int. 3",
+      "indirizzo": "Via Sulis 14 int. 3",
+      "comune": "Cagliari",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Marco Serra",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Marco Serra",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 22.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A010",
+      "nome": "Piazza Yenne 2",
+      "indirizzo": "Piazza Yenne 2",
+      "comune": "Cagliari",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Giulia Pinna",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Giulia Pinna",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 22.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A011",
+      "nome": "Via Manno 41",
+      "indirizzo": "Via Manno 41",
+      "comune": "Cagliari",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Antonio Melis",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Antonio Melis",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A012",
+      "nome": "Via Baylle 9 int. 2",
+      "indirizzo": "Via Baylle 9 int. 2",
+      "comune": "Cagliari",
+      "camere": 1,
+      "posti_letto": 3,
+      "pms_owner": "Francesca Loi",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Francesca Loi",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A013",
+      "nome": "Corso Vittorio Emanuele 44",
+      "indirizzo": "Corso Vittorio Emanuele 44",
+      "comune": "Cagliari",
+      "camere": 3,
+      "posti_letto": 6,
+      "pms_owner": "Paolo Cabras",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Paolo Cabras",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "arredamento",
+          "shape": "one_off",
+          "amount": 7400.0,
+          "start_date": null,
+          "end_date": null,
+          "date": "2026-06-15",
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A014",
+      "nome": "Via Sardegna 27",
+      "indirizzo": "Via Sardegna 27",
+      "comune": "Cagliari",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Elena Piras",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Elena Piras",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A015",
+      "nome": "Viale Regina Margherita 18",
+      "indirizzo": "Viale Regina Margherita 18",
+      "comune": "Cagliari",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Roberto Sanna",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Roberto Sanna",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A016",
+      "nome": "Via Napoli 5 int. 1",
+      "indirizzo": "Via Napoli 5 int. 1",
+      "comune": "Cagliari",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Chiara Deiana",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Chiara Deiana",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A017",
+      "nome": "Via Roma 112",
+      "indirizzo": "Via Roma 112",
+      "comune": "Cagliari",
+      "camere": 2,
+      "posti_letto": 5,
+      "pms_owner": "Stefano Marras",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Stefano Marras",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A018",
+      "nome": "Lungomare Poetto 3",
+      "indirizzo": "Lungomare Poetto 3",
+      "comune": "Cagliari",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Laura Puddu",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Laura Puddu",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A019",
+      "nome": "Via Genova 8",
+      "indirizzo": "Via Genova 8",
+      "comune": "Olbia",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Davide Corda",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Davide Corda",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A020",
+      "nome": "Via Regina Elena 30",
+      "indirizzo": "Via Regina Elena 30",
+      "comune": "Olbia",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Silvia Mura",
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Silvia Mura",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A021",
+      "nome": "Via Cavour 16 int. 2",
+      "indirizzo": "Via Cavour 16 int. 2",
+      "comune": "Roma",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Andrea Fadda",
+      "cluster": "Roma",
+      "tags": [
+        "Citta"
+      ],
+      "landlords": [
+        {
+          "name": "Andrea Fadda",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A022",
+      "nome": "Via Principe Amedeo 41",
+      "indirizzo": "Via Principe Amedeo 41",
+      "comune": "Roma",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Martina Usai",
+      "cluster": "Roma",
+      "tags": [
+        "Citta"
+      ],
+      "landlords": [
+        {
+          "name": "Martina Usai",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A023",
+      "nome": "Via Gioberti 7",
+      "indirizzo": "Via Gioberti 7",
+      "comune": "Roma",
+      "camere": 1,
+      "posti_letto": 3,
+      "pms_owner": "Luca Atzori",
+      "cluster": "Roma",
+      "tags": [
+        "Citta"
+      ],
+      "landlords": [
+        {
+          "name": "Luca Atzori",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A024",
+      "nome": "Palazzo San Lazzaro 1",
+      "indirizzo": "Palazzo San Lazzaro 1",
+      "comune": "Roma",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Valentina Congiu",
+      "cluster": "Roma",
+      "tags": [
+        "Citta",
+        "Luxury"
+      ],
+      "landlords": [
+        {
+          "name": "Valentina Congiu",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A025",
+      "nome": "Palazzo San Lazzaro 2",
+      "indirizzo": "Palazzo San Lazzaro 2",
+      "comune": "Roma",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Massimo Carta",
+      "cluster": "Roma",
+      "tags": [
+        "Citta",
+        "Luxury"
+      ],
+      "landlords": [
+        {
+          "name": "Massimo Carta",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A026",
+      "nome": "Palazzo San Lazzaro 3",
+      "indirizzo": "Palazzo San Lazzaro 3",
+      "comune": "Roma",
+      "camere": 2,
+      "posti_letto": 5,
+      "pms_owner": "Sara Manca",
+      "cluster": "Roma",
+      "tags": [
+        "Citta",
+        "Luxury"
+      ],
+      "landlords": [
+        {
+          "name": "Sara Manca",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A027",
+      "nome": "Calle dei Fabbri 4",
+      "indirizzo": "Calle dei Fabbri 4",
+      "comune": "Venezia",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Giorgio Lai",
+      "cluster": "Venezia",
+      "tags": [
+        "Citta"
+      ],
+      "landlords": [
+        {
+          "name": "Giorgio Lai",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A028",
+      "nome": "Fondamenta Nuove 21",
+      "indirizzo": "Fondamenta Nuove 21",
+      "comune": "Venezia",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Alessia Spano",
+      "cluster": "Venezia",
+      "tags": [
+        "Citta"
+      ],
+      "landlords": [
+        {
+          "name": "Alessia Spano",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A029",
+      "nome": "Via Dante 55 int. 1",
+      "indirizzo": "Via Dante 55 int. 1",
+      "comune": "Cagliari",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Immobiliare Tirso Srl",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Immobiliare Tirso Srl",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A030",
+      "nome": "Via Dante 55 int. 4",
+      "indirizzo": "Via Dante 55 int. 4",
+      "comune": "Cagliari",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Immobiliare Tirso Srl",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Immobiliare Tirso Srl",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A031",
+      "nome": "Via Alghero 12",
+      "indirizzo": "Via Alghero 12",
+      "comune": "Cagliari",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Nicola Vargiu",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Nicola Vargiu",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A032",
+      "nome": "Via Alghero 14",
+      "indirizzo": "Via Alghero 14",
+      "comune": "Cagliari",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Nicola Vargiu",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Nicola Vargiu",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A033",
+      "nome": "Via Milano 3 int. 2",
+      "indirizzo": "Via Milano 3 int. 2",
+      "comune": "Roma",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Beatrice Onnis",
+      "cluster": "Roma",
+      "tags": [
+        "Citta"
+      ],
+      "landlords": [
+        {
+          "name": "Beatrice Onnis",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A034",
+      "nome": "Via Milano 3 int. 5",
+      "indirizzo": "Via Milano 3 int. 5",
+      "comune": "Roma",
+      "camere": 1,
+      "posti_letto": 3,
+      "pms_owner": "Beatrice Onnis",
+      "cluster": "Roma",
+      "tags": [
+        "Citta"
+      ],
+      "landlords": [
+        {
+          "name": "Beatrice Onnis",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A035",
+      "nome": "Campo Santa Margherita 9",
+      "indirizzo": "Campo Santa Margherita 9",
+      "comune": "Venezia",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": "Fabio Contini",
+      "cluster": "Venezia",
+      "tags": [
+        "Citta"
+      ],
+      "landlords": [
+        {
+          "name": "Fabio Contini",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A036",
+      "nome": "Rio Terà 12",
+      "indirizzo": "Rio Terà 12",
+      "comune": "Venezia",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": "Fabio Contini",
+      "cluster": "Venezia",
+      "tags": [
+        "Citta"
+      ],
+      "landlords": [
+        {
+          "name": "Fabio Contini",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A037",
+      "nome": "Via Garibaldi 19 int. 2",
+      "indirizzo": "Via Garibaldi 19 int. 2",
+      "comune": "Cagliari",
+      "camere": 3,
+      "posti_letto": 6,
+      "pms_owner": "Rossi Gianluca",
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Rossi Gianluca",
+          "share_pct": 60.0
+        },
+        {
+          "name": "Bianchi",
+          "share_pct": 40.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": false,
+      "blocking_reason": null,
+      "configured": true
+    },
+    {
+      "id": "A038",
+      "nome": "Via Sassari 61",
+      "indirizzo": "Via Sassari 61",
+      "comune": "Cagliari",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": null,
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Faisal",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": true,
+      "blocking_reason": "contract not yet signed",
+      "configured": true
+    },
+    {
+      "id": "A039",
+      "nome": "Vico Speranza 2",
+      "indirizzo": "Vico Speranza 2",
+      "comune": "Cagliari",
+      "camere": 1,
+      "posti_letto": 2,
+      "pms_owner": null,
+      "cluster": "Cagliari",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Faisal",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 8.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": true,
+      "blocking_reason": "contract not yet signed",
+      "configured": true
+    },
+    {
+      "id": "A040",
+      "nome": "Via Trieste 44 int. 3",
+      "indirizzo": "Via Trieste 44 int. 3",
+      "comune": "Olbia",
+      "camere": 2,
+      "posti_letto": 4,
+      "pms_owner": null,
+      "cluster": "Nord Sardegna",
+      "tags": [
+        "Mare"
+      ],
+      "landlords": [
+        {
+          "name": "Faisal",
+          "share_pct": 100.0
+        }
+      ],
+      "scheme": {
+        "type": "percentage",
+        "percentage": 25.0,
+        "base": "net_of_ota_fees",
+        "extras_included_in_base": false,
+        "monthly_rent": null,
+        "season_start": null,
+        "season_end": null
+      },
+      "setup_costs": [
+        {
+          "label": "pulizie",
+          "shape": "per_booking",
+          "amount": 10.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        },
+        {
+          "label": "kit_benvenuto",
+          "shape": "per_guest",
+          "amount": 2.0,
+          "start_date": null,
+          "end_date": null,
+          "date": null,
+          "note": null
+        }
+      ],
+      "blocking": true,
+      "blocking_reason": "contract not yet signed",
+      "configured": true
+    }
+  ]
+}

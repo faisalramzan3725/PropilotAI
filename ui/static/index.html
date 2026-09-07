@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dott.House Onboarding Copilot</title>
+<style>
+  /* No design effort spent here on purpose -- see PRIORITIES.md / README.
+     Just enough layout to click through a whole onboarding call. */
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, Helvetica, Arial, sans-serif; margin: 0; height: 100vh; display: flex; flex-direction: column; }
+  header { padding: 8px 12px; border-bottom: 2px solid #333; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  header .badges { display: flex; gap: 8px; flex-wrap: wrap; font-size: 13px; }
+  .badge { border: 1px solid #999; border-radius: 4px; padding: 2px 8px; }
+  .badge.warn { border-color: #b45; color: #b45; }
+  main { flex: 1; display: flex; min-height: 0; }
+  #state-pane { width: 58%; overflow: auto; border-right: 2px solid #333; padding: 8px; }
+  #chat-pane { width: 42%; display: flex; flex-direction: column; min-height: 0; }
+  #chat-log { flex: 1; overflow: auto; padding: 8px; }
+  #chat-form { display: flex; border-top: 2px solid #333; }
+  #chat-input { flex: 1; padding: 10px; font-size: 14px; border: none; }
+  #chat-form button { padding: 10px 16px; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12px; }
+  th, td { border: 1px solid #ccc; padding: 3px 5px; text-align: left; vertical-align: top; }
+  th { position: sticky; top: 0; background: #eee; }
+  tr.blocking { background: #ffecec; }
+  tr.unconfigured { background: #fff8e0; }
+  .msg { margin: 10px 0; }
+  .msg .who { font-weight: bold; font-size: 11px; text-transform: uppercase; color: #666; }
+  .msg .text { white-space: pre-wrap; }
+  .msg.operator .text { color: #114; }
+  .msg.agent .text { color: #141; }
+  .msg.error .text { color: #b00; }
+  .toolcalls { margin-top: 4px; font-size: 11px; }
+  .toolcall { border: 1px solid #ccc; border-radius: 3px; padding: 3px 6px; margin: 2px 0; cursor: pointer; background: #fafafa; }
+  .toolcall.dry { border-color: #b80; background: #fff6e6; }
+  .toolcall.err { border-color: #b00; background: #ffecec; }
+  .toolcall pre { white-space: pre-wrap; margin: 4px 0 0 0; max-height: 200px; overflow: auto; }
+  .costs { font-size: 11px; }
+  button { cursor: pointer; }
+  #import-btn.done { opacity: 0.5; }
+</style>
+</head>
+<body>
+
+<header>
+  <strong>Dott.House &mdash; Onboarding Copilot</strong>
+  <button id="import-btn">1. Drop in export / Import</button>
+  <button id="reset-btn">New call (reset)</button>
+  <div class="badges" id="badges"></div>
+</header>
+
+<main>
+  <div id="state-pane">
+    <div id="state-empty">No account imported yet. Click &ldquo;Import&rdquo; to drop in the export and start the call.</div>
+    <table id="state-table" style="display:none">
+      <thead>
+        <tr>
+          <th>ID</th><th>Nome</th><th>Comune</th><th>Cam.</th>
+          <th>Cluster</th><th>Tag</th><th>Landlord</th>
+          <th>Scheme</th><th>Costi</th><th>Blocking</th>
+        </tr>
+      </thead>
+      <tbody id="state-tbody"></tbody>
+    </table>
+  </div>
+
+  <div id="chat-pane">
+    <div id="chat-log"></div>
+    <form id="chat-form">
+      <input id="chat-input" placeholder="Type what changed... (Italian or English)" autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</main>
+
+<script>
+const chatLog = document.getElementById('chat-log');
+const chatForm = document.getElementById('chat-form');
+const chatInput = document.getElementById('chat-input');
+const importBtn = document.getElementById('import-btn');
+const resetBtn = document.getElementById('reset-btn');
+const badges = document.getElementById('badges');
+
+function esc(s) {
+  return String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+}
+
+function renderToolCall(tc) {
+  const dry = tc.input && tc.input.dry_run === true;
+  const cls = tc.is_error ? 'toolcall err' : (dry ? 'toolcall dry' : 'toolcall');
+  const label = tc.is_error ? 'ERROR' : (dry ? 'PROPOSED (not applied)' : 'applied');
+  const div = document.createElement('div');
+  div.className = cls;
+  div.innerHTML = `<b>${esc(tc.name)}</b> &mdash; ${label} <span style="float:right">&#9662; details</span>`;
+  const pre = document.createElement('pre');
+  pre.style.display = 'none';
+  pre.textContent = 'input: ' + JSON.stringify(tc.input, null, 2) + '\n\nresult: ' + (tc.result || '');
+  div.appendChild(pre);
+  div.addEventListener('click', () => { pre.style.display = pre.style.display === 'none' ? 'block' : 'none'; });
+  return div;
+}
+
+function appendMessage(entry) {
+  const wrap = document.createElement('div');
+  wrap.className = 'msg ' + (entry.role === 'operator' ? 'operator' : (entry.is_error ? 'error' : 'agent'));
+  const who = document.createElement('div');
+  who.className = 'who';
+  who.textContent = entry.role === 'operator' ? 'Operator' : 'Agent';
+  const text = document.createElement('div');
+  text.className = 'text';
+  text.textContent = entry.text;
+  wrap.appendChild(who);
+  wrap.appendChild(text);
+  if (entry.tool_calls && entry.tool_calls.length) {
+    const tcWrap = document.createElement('div');
+    tcWrap.className = 'toolcalls';
+    entry.tool_calls.forEach(tc => tcWrap.appendChild(renderToolCall(tc)));
+    wrap.appendChild(tcWrap);
+  }
+  chatLog.appendChild(wrap);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+
+async function loadHistory() {
+  const r = await fetch('/api/history');
+  const hist = await r.json();
+  chatLog.innerHTML = '';
+  hist.forEach(appendMessage);
+}
+
+function schemeText(l) {
+  if (!l.scheme) return '(none)';
+  if (l.scheme.type === 'percentage') {
+    return `${l.scheme.percentage}% of ${l.scheme.base}` + (l.scheme.extras_included_in_base ? ' (extras incl.)' : '');
+  }
+  return `rent-to-rent ${l.scheme.monthly_rent}/mo, ${l.scheme.season_start}..${l.scheme.season_end}`;
+}
+
+function costsText(l) {
+  if (!l.setup_costs || !l.setup_costs.length) return '';
+  return l.setup_costs.map(c => {
+    let win = '';
+    if (c.shape === 'recurring') win = ` [${c.start_date}..${c.end_date}]`;
+    else if (c.shape === 'one_off') win = ` [${c.date}]`;
+    else if (c.start_date || c.end_date) win = ` [${c.start_date||'...'}..${c.end_date||'...'}]`;
+    return `${c.label}: ${c.amount} (${c.shape})${win}`;
+  }).join('; ');
+}
+
+async function loadState() {
+  const r = await fetch('/api/state');
+  const data = await r.json();
+  badges.innerHTML = '';
+  if (!data.imported) {
+    document.getElementById('state-empty').style.display = 'block';
+    document.getElementById('state-table').style.display = 'none';
+    importBtn.classList.remove('done');
+    return;
+  }
+  importBtn.classList.add('done');
+  document.getElementById('state-empty').style.display = 'none';
+  document.getElementById('state-table').style.display = 'table';
+
+  const s = data.summary || {};
+  const b = [];
+  b.push(`<span class="badge">${s.total_listings ?? '?'} listings</span>`);
+  b.push(`<span class="badge">${s.configured ?? '?'} configured</span>`);
+  b.push(`<span class="badge warn">${s.blocking ?? 0} blocking</span>`);
+  b.push(`<span class="badge">${data.exported_to_disk ? 'saved to out/configuration.json' : 'not yet saved'}</span>`);
+  badges.innerHTML = b.join(' ');
+
+  const tbody = document.getElementById('state-tbody');
+  tbody.innerHTML = '';
+  (data.listings || []).forEach(l => {
+    const tr = document.createElement('tr');
+    if (l.blocking) tr.className = 'blocking';
+    else if (!l.configured) tr.className = 'unconfigured';
+    const landlords = (l.landlords || []).map(x => `${x.name} ${x.share_pct}%`).join(', ');
+    tr.innerHTML = `
+      <td>${esc(l.id)}</td>
+      <td>${esc(l.nome)}</td>
+      <td>${esc(l.comune)}</td>
+      <td>${l.camere}</td>
+      <td>${esc(l.cluster || '')}</td>
+      <td>${esc((l.tags||[]).join(', '))}</td>
+      <td>${esc(landlords)}</td>
+      <td>${esc(schemeText(l))}</td>
+      <td class="costs">${esc(costsText(l))}</td>
+      <td>${l.blocking ? esc(l.blocking_reason || 'yes') : ''}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+async function refresh() {
+  await loadState();
+}
+
+chatForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const message = chatInput.value.trim();
+  if (!message) return;
+  chatInput.value = '';
+  chatInput.disabled = true;
+  appendMessage({role: 'operator', text: message});
+  try {
+    const r = await fetch('/api/chat', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({message}),
+    });
+    const entry = await r.json();
+    if (r.ok) appendMessage(entry);
+    else appendMessage({role: 'agent', text: entry.error || 'error', is_error: true});
+  } finally {
+    chatInput.disabled = false;
+    chatInput.focus();
+    await refresh();
+  }
+});
+
+importBtn.addEventListener('click', async () => {
+  importBtn.disabled = true;
+  try {
+    const r = await fetch('/api/import', {method: 'POST'});
+    const entry = await r.json();
+    if (r.ok) appendMessage(entry);
+  } finally {
+    importBtn.disabled = false;
+    await refresh();
+  }
+});
+
+resetBtn.addEventListener('click', async () => {
+  if (!confirm('Start a fresh call? This clears the chat and the in-memory account (out/configuration.json stays on disk until overwritten).')) return;
+  await fetch('/api/reset', {method: 'POST'});
+  chatLog.innerHTML = '';
+  await refresh();
+});
+
+loadHistory().then(refresh);
+setInterval(refresh, 4000);
+</script>
+</body>
+</html>

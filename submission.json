@@ -1,0 +1,30 @@
+{
+  "candidate": "Shariq Ramzan",
+  "mcp": {
+    "transport": "stdio",
+    "command": "uv run python -m server.main"
+  },
+  "agent": {
+    "command": "uv run python -m agent.main",
+    "model": "claude-sonnet-5"
+  },
+  "app": {
+    "command": "uv run python -m ui.main",
+    "url": "http://localhost:8000"
+  },
+  "eval": {
+    "command": "uv run python -m eval.run"
+  },
+  "built": ["mcp", "agent", "ui", "eval"],
+  "cut": [
+    "P&L / quota-proprietario computation (out of scope for this slice -- see PRIORITIES.md)",
+    "undo / multi-step edit history",
+    "persistence across process restarts beyond out/configuration.json",
+    "voice input (typing only)",
+    "a dedicated translate tool (the agent is fluent Italian; the operator and client speak Italian to each other and to it directly)",
+    "auth / multi-operator / multi-session",
+    "hardened CSV parsing for arbitrary malformed exports (brief says parsing is not scored)"
+  ],
+  "setup": "uv sync",
+  "notes": "Requires the `claude` CLI installed and logged in (same account as agent.model) -- the agent loop runs on the Claude Agent SDK, which drives that CLI as a subprocess. See README 'How to run it' for the exact sequence and a cold-account cost/turn estimate."
+}

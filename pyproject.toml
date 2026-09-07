@@ -1,0 +1,20 @@
+[project]
+name = "takehome-ramzan"
+version = "0.1.0"
+description = "Dott.House onboarding copilot take-home"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.9.0,<2.0.0",
+    "claude-agent-sdk>=0.1.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "python-multipart>=0.0.9",
+    "flask>=3.1.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["server", "agent", "ui", "eval"]
