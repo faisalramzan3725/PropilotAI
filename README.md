@@ -22,10 +22,6 @@ From a clean checkout, in this order:
 
 ```bash
 uv sync                    # installs mcp, claude-agent-sdk, flask
-claude --version           # the agent runs on the Claude Agent SDK, which
-                            # drives the `claude` CLI as a subprocess -- if
-                            # this fails: npm install -g @anthropic-ai/claude-code
-                            # then claude login
 uv run python -m eval.run  # ~1s, no LLM calls -- sanity-checks the domain
                             # logic before you trust anything built on it
 uv run python -m ui.main   # starts the app on http://localhost:8000
