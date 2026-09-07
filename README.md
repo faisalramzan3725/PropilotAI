@@ -11,7 +11,7 @@ and why, and `transcripts/` for how this was built.
 
 ![Landing page — right after Import, before the operator has typed anything](docs/screenshots/landing_page.png)
 
-The left pane is the account, live — every listing, and how it's
+The left pane is the account, live every listing, and how it's
 currently configured. The right pane is the conversation. Every agent
 reply that changed something shows the actual tool call it made, in a
 box you can click open to see exactly what was read or written.
@@ -32,29 +32,20 @@ that's the "operator drops the export file in" moment from the brief. It
 loads the three CSVs in `data/` and starts the call. From there just type
 what changed, in Italian or English, into the box on the right.
 
-Two other ways to run the same agent, if you don't want the browser:
-`uv run python -m agent.main` is a plain terminal chat with full tool-call
-visibility, and `uv run python -m server.main` runs just the MCP server on
-its own over stdio (`tools/list` / `tools/call`), independent of any agent —
-that's the `mcp.command` in `submission.json`.
-
 ## Walking through a real call
 
-These screenshots are from an actual run against the live agent, not
-mockups — same conversation as `scripts/test_conversation.py` and the
-"Test conversation" section below, so you can reproduce this exact
-sequence yourself.
+These screenshots are from an actual run against the live agent as given below:
 
 **1. Import.** Click the button, the agent calls `import_export`, and the
-left pane fills in with all 40 listings — nothing configured yet, cluster
+left pane fills in with all 40 listings, nothing configured yet, cluster
 and tags empty, exactly as the brief describes a fresh export.
 
 ![Right after import: 40 listings, 0 configured](docs/screenshots/ls_05.png)
 
 **2. The "otto volte" moment.** The operator says the eight Pianeta Casa
 listings are a sublease at a fixed monthly rent. One message, one selector
-— `set_rent_to_rent` plus a matching recurring `add_setup_cost`, both
-scoped to "owner: Pianeta Casa" — and all eight update together instead of
+`set_rent_to_rent` plus a matching recurring `add_setup_cost`, both
+scoped to "owner: Pianeta Casa" and all eight update together instead of
 one at a time.
 
 ![8 of 40 configured after the Pianeta Casa instruction](docs/screenshots/ls_04.png)
