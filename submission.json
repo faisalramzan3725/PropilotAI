@@ -1,5 +1,5 @@
 {
-  "candidate": "Shariq Ramzan",
+  "candidate": "Faisal Ramzan",
   "mcp": {
     "transport": "stdio",
     "command": "uv run python -m server.main"
