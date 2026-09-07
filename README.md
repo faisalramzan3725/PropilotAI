@@ -50,11 +50,11 @@ one at a time.
 
 ![8 of 40 configured after the Pianeta Casa instruction](docs/screenshots/ls_04.png)
 
-**3. The rest, on a percentage — and a clarifying question.** "Twenty-five
+**3. The rest, on a percentage and a clarifying question.** "Twenty-five
 percent" isn't enough on its own (see "The base-of-a-percentage rule"
 below), so the operator has to say what it's a percentage *of*. The agent
 applies 25% net-of-OTA-fees to everyone left, narrows two listings to 22%,
-and then — on its own — notices three listings still have no owner
+and then on its own notices three listings still have no owner
 recorded and asks what to do about them instead of guessing.
 
 ![37 configured, agent flags the 3 ownerless listings and asks](docs/screenshots/ls_03.png)
@@ -66,28 +66,22 @@ listings at all:
 
 ![All 40 configured after supplying an owner name](docs/screenshots/ls_02.png)
 
-Told instead to mark them blocking, that works too — 40 configured, 3 of
+Told instead to mark them blocking, that works too 40 configured, 3 of
 them explicitly blocking with a reason, which is the ending that matches
 the original call transcript in `data/onboarding_call.md`:
 
 ![All 40 configured, 3 explicitly blocking, final summary saved](docs/screenshots/ls_01.png)
 
 Both are legitimate ways to close out three listings with missing
-information — the point of the tool is that it never leaves them silently
+information the point of the tool is that it never leaves them silently
 unconfigured, and never guesses an owner or a commission base on your
 behalf.
 
 ## The tool surface
 
-Thirteen tools, all in `server/main.py`, backed by a plain-Python domain
-model in `server/domain.py` that has no MCP or agent code in it at all —
-that's what makes it unit-testable on its own (`eval/run.py`) without ever
-spinning up a server or calling the model. Two decisions shape almost
-everything else here:
-
 **Every tool that changes listings takes a selector, not a single ID.** A
-selector is either an explicit list of IDs, or a filter — cluster, tags,
-comune, room count, owner, current scheme, blocking status — that all
+selector is either an explicit list of IDs, or a filter cluster, tags,
+comune, room count, owner, current scheme, blocking status that all
 combine together. This exists because of one moment in the source
 transcript: the operator configures eight identical listings one at a
 time, narrating "Marina 1... Marina 2... Marina 3...", and the client
@@ -98,26 +92,26 @@ one call instead of eight, and the same selector previews a change
 
 **The base-of-a-percentage rule.** `set_commission_scheme`'s `base`
 argument has no default and is required on every call. "Twenty-five
-percent" isn't a number until you say twenty-five percent *of what* — net
+percent" isn't a number until you say twenty-five percent *of what* net
 of the booking platform's own fee, or the guest's full payment before that
-fee comes out — and that choice moves real money across a whole
+fee comes out and that choice moves real money across a whole
 portfolio. The tool simply cannot be called without naming it, and the
 agent's instructions tell it to ask rather than ever guess.
 
 | Tool | What it's for |
 |---|---|
-| `import_export` | Loads the three CSVs from `data/` and starts a fresh account. Takes no arguments — the brief is explicit that `data/` is fixed. |
+| `import_export` | Loads the three CSVs from `data/` and starts a fresh account. Takes no arguments, the brief is explicit that `data/` is fixed. |
 | `get_summary` | Portfolio-wide progress: totals, configured vs. blocking, breakdowns by cluster and scheme. |
-| `list_listings` | A compact view of listings matching a selector (or all 40) — the "what would this affect" preview before any bulk change. |
+| `list_listings` | A compact view of listings matching a selector (or all 40), the "what would this affect" preview before any bulk change. |
 | `get_listing` | Full detail on one listing, including every setup cost. |
 | `set_cluster` | Assigns a cluster (usually geography) to every matched listing. Renaming is just re-running this with a selector matching the old name. |
 | `set_tags` | Adds, removes, or replaces tags (typology/market segment) on matched listings. |
-| `set_commission_scheme` | Percentage commission, with a required `base` — see above. |
-| `set_rent_to_rent` | A fixed monthly rent for a season instead of a percentage. Doesn't also create the matching cost line — that's a separate `add_setup_cost` call, since the scheme and the cost it implies are different facts that can diverge. |
-| `set_landlords` | Co-ownership split for **one** listing. Not selector-based on purpose — an ownership split is a fact about one specific property, never a policy you'd bulk-apply. |
+| `set_commission_scheme` | Percentage commission, with a required `base` see above. |
+| `set_rent_to_rent` | A fixed monthly rent for a season instead of a percentage. Doesn't also create the matching cost line that's a separate `add_setup_cost` call, since the scheme and the cost it implies are different facts that can diverge. |
+| `set_landlords` | Co-ownership split for **one** listing. Not selector-based on purpose an ownership split is a fact about one specific property, never a policy you'd bulk-apply. |
 | `set_blocking` | Marks listings as blocking (excluded from P&L until resolved), with a required reason. |
-| `add_setup_cost` | Records a setup cost (recurring, one-off, per-booking, or per-guest). Upserts by `(listing, label)`, so a correction like "actually the two-bedrooms are cheaper" is just another call with a narrower selector and the same label — it overwrites only the listings that match. |
-| `remove_setup_cost` | Deletes a cost outright — different intent from a correction, so it's a separate tool rather than `amount=0`. |
+| `add_setup_cost` | Records a setup cost (recurring, one-off, per-booking, or per-guest). Upserts by `(listing, label)`, so a correction like "actually the two-bedrooms are cheaper" is just another call with a narrower selector and the same label, it overwrites only the listings that match. |
+| `remove_setup_cost` | Deletes a cost outright different intent from a correction, so it's a separate tool rather than `amount=0`. |
 | `export_configuration` | Writes `out/configuration.json`. Safe to call every turn; the agent is told to call it after every change and always at the end. |
 
 ## What was assumed, and what's worth confirming with a real client
@@ -126,18 +120,18 @@ agent's instructions tell it to ask rather than ever guess.
   `camere == 1`. Worth confirming this holds for a PMS export from a
   different vendor.
 - **Setup costs are always in EUR**, and always one of the four shapes
-  above — no per-night shape came up in the source data.
+  above no per-night shape came up in the source data.
 - **A blocking listing still accrues setup costs** while it's blocked (the
   cost exists whether or not revenue is currently attributed to it). This
   is a modeling choice, not something a client actually confirmed.
 - **The tool will never let the agent set a commission scheme without a
-  named base.** This isn't really an assumption — it's the one thing in
+  named base.** This isn't really an assumption it's the one thing in
   this domain the software refuses to guess at, on purpose.
 
 ## What's deliberately not here
 
 No P&L or payout calculation (the brief's scope is import, grouping,
-landlord terms, and setup costs — getting the *configuration* right is the
+landlord terms, and setup costs getting the *configuration* right is the
 prerequisite for a payout number ever being trustworthy, and that's
 already the full time budget on its own). No undo/edit-history stack
 (a misspoken instruction is just corrected with the next message, the way
@@ -162,7 +156,7 @@ subset without duplicating the cost line.
 
 `uv run python -m scripts.test_conversation` is the other end of the
 pyramid: a scripted, ten-turn conversation — the same one narrated above
-with screenshots — run against the real agent and the real Claude Agent
+with screenshots run against the real agent and the real Claude Agent
 SDK, no mocks. It prints every reply and tool call as it happens and
 checks the final state against the source transcript's own numbers (40
 listings, 8 rent-to-rent, 29 percentage, 3 blocking). This costs a few
@@ -171,46 +165,10 @@ making real tool calls, not a fixture replay.
 
 ## Cost
 
-Model: **claude-sonnet-5**, via the Claude Agent SDK. A full onboarding —
-all 40 listings, replaying the whole source transcript's content — takes
+Model: **claude-sonnet-5**, via the Claude Agent SDK. A full onboarding
+all 40 listings, replaying the whole source transcript's content takes
 **10 operator turns** (the brief's own budget) and costs roughly **$2.80–
 $3.10** end to end, 85–95 seconds of agent time, based on several live
 runs while building and testing this. Cost per turn varies with how much
-it touches — a single-listing correction is cheap, a bulk commission-scheme
+it touches a single-listing correction is cheap, a bulk commission-scheme
 call with its own preview costs more.
-
-## If something looks broken
-
-A few real bugs turned up during testing after the initial build, all
-fixed as of this version:
-
-- **`pyproject.toml` didn't pin an upper bound on `mcp`**, so `uv sync`
-  could resolve to `mcp` 2.x, which renamed the API this project is built
-  on (`FastMCP` → `MCPServer`). That made the MCP server crash on startup,
-  which left the agent with no real tools to call at all — it would then
-  write out *text* that looked like a tool call instead of actually
-  making one. Fixed by pinning `mcp>=1.9.0,<2.0.0`. If you ever see this,
-  delete `.venv` and `uv.lock` and run `uv sync` again.
-- **The state pane could show stale data from a previous run** after
-  restarting the app, because nothing cleared the on-disk snapshot when a
-  new process started. Fixed — a fresh process now always starts showing
-  "not imported" until you actually import in that session.
-- **A failed tool call used to look identical to a successful one** (a
-  plain `{"error": ...}` result, not a real protocol-level error), which
-  made failures easy for both the UI and the agent to miss. Fixed — real
-  failures now surface as real errors.
-- **"New call (reset)" used to delete `out/configuration.json` too**,
-  contradicting its own confirmation dialog. Fixed — reset now only
-  clears the in-memory call and the working snapshot; your last saved
-  configuration survives.
-
-## What this was built with
-
-Claude (Cowork), on Claude Sonnet 5, driving Claude Code / the Claude
-Agent SDK, in a cloud sandbox — code, tests, and this README were produced
-in that session from the pasted brief and the CSV/transcript data (the
-booking CSV arrived truncated by a paste-size limit; see
-`transcripts/session-01-build.md` for how the remaining rows were
-synthesized and why). Runtime: Python 3.11, `uv` for dependencies, the
-`mcp` Python SDK for the server, `claude-agent-sdk` for the agent loop,
-Flask for the local UI.
