@@ -131,8 +131,8 @@ behalf.
 
 The rest of the call (not screenshotted individually, but part of the
 same run) covers the other half of the tool surface: clustering listings
-by city (`set_cluster` — Cagliari, Nord Sardegna, Roma, Venezia), tagging
-by segment (`set_tags` — Mare, Città, and Luxury on just the three
+by city (`set_cluster` Cagliari, Nord Sardegna, Roma, Venezia), tagging
+by segment (`set_tags` Mare, Città, and Luxury on just the three
 Palazzo San Lazzaro listings), a co-ownership split on one listing that
 creates a landlord who wasn't in the export yet (`set_landlords` Via
 Garibaldi 19 int. 2, Rossi Gianluca 60% / Bianchi 40%), and per-booking
